@@ -1,10 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe Product, type: :model do
-  subject {
-    described_class.new(title: "anything",
-                        description: "some text",
-                        image_url: "sum.img",
+  subject do
+    described_class.new(title: 'anything',
+                        description: 'some text',
+                        image_url: 'https://levedelivery.com.br/wp-content/uploads/2020/06/picanha-suina.jpg',
                         price: 10,
                         calories: 10,
                         protein: 10,
@@ -13,20 +13,20 @@ RSpec.describe Product, type: :model do
                         total_fat: 10,
                         sat_fat: 10,
                         sodium: 10)
-  }
-  
-  nutritional_value = [:calories, :protein, :fibers, :total_fat, :sat_fat, :sodium]
+  end
 
-  it "is valid with attributes" do
+  nutritional_value = %i[calories protein fibers total_fat sat_fat sodium]
+
+  it 'is valid with attributes' do
     expect(subject).to be_valid
   end
 
-  it "is not valid without a name" do
+  it 'is not valid without a name' do
     subject.title = nil
     expect(subject).to_not be_valid
   end
 
-  context "nutritional facts" do
+  context 'nutritional facts' do
     nutritional_value.each do |attr|
       it "is not valid with negative #{attr}" do
         subject[attr] = -1
@@ -34,8 +34,8 @@ RSpec.describe Product, type: :model do
       end
     end
   end
-  
-  context "nutritional attributes" do
+
+  context 'nutritional attributes' do
     nutritional_value.each do |attr|
       it "is not valid without #{attr}" do
         subject[attr] = nil
@@ -43,4 +43,6 @@ RSpec.describe Product, type: :model do
       end
     end
   end
+
+  it { should validate_uniqueness_of(:title) }
 end
