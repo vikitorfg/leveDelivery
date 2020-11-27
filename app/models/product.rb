@@ -8,10 +8,10 @@ class Product < ApplicationRecord
   validates :price, :calories, :protein, :carbohidrates, :fibers, :total_fat,
             :sat_fat, :sodium, numericality: { greater_than_or_equal_to: 0 }
 
-  validates :image_url, allow_blank: true, format: {
-    with: /\.(gif|jpg|png)\z/i,
-    message: 'must be a URL for GIF, JPG or PNG image.'
-  }
+#   validates :image_url, allow_blank: true, format: {
+#     with: /\.(gif|jpg|png)\z/i,
+#     message: 'must be a URL for GIF, JPG or PNG image.'
+#   }
 
   has_many :line_items
 
