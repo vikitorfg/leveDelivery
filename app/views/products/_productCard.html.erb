@@ -1,15 +1,17 @@
-<div class="card card-product" style="width: 18rem;">
-  <% if product.image_url %>
-    <%= image_tag(product.image_url, class: "card-img-top")%>
-  <% else %>
-    <img class="card-img-top" src=<%= bacon_mockup %> alt="Card image cap">
-  <% end %>
-  <div class="card-body">
-    <h5 class="card-title"><%= product.title %></h5>
-    <p class="card-text"><%= truncate(product.description, length: 90) %></p>
-    <p><%= product.price %></p>
-    <%= link_to 'Show', product %>
-    <%= link_to 'Edit', edit_product_path(product) %>
-    <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
+<% cache product do%>
+  <div class="card card-product" style="width: 18rem;">
+    <% if product.image_url %>
+      <%= image_tag(product.image_url, class: "card-img-top")%>
+    <% else %>
+      <img class="card-img-top" src=<%= bacon_mockup %> alt="Card image cap">
+    <% end %>
+    <div class="card-body">
+      <h5 class="card-title"><%= product.title %></h5>
+      <p class="card-text"><%= truncate(product.description, length: 90) %></p>
+      <p><%= product.price %></p>
+      <%= link_to 'Show', product %>
+      <%= link_to 'Edit', edit_product_path(product) %>
+      <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div>
   </div>
-</div>
+<% end %>

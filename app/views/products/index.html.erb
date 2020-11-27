@@ -1,8 +1,10 @@
 <h1>Products</h1>
 <tbody>
   <div class="card-container">
-    <% @products.each do |product| %>
-      <%= render 'productCard', product: product %>
+    <% cache @products do%>
+      <% @products.each do |product| %>
+        <%= render 'productCard', product: product %>
+      <% end %>
     <% end %>
   </div>
 </tbody>
