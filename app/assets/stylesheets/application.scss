@@ -14,3 +14,29 @@
  *= require_self
  */
 @import "bootstrap/scss/bootstrap";
+@import "font-awesome";
+
+// navbar
+.navitem-holder {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: auto;
+  flex-grow: 100;
+  margin-left: 20%;
+}
+
+.navitem-holder a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #424242;
+}
+
+.navitem-holder a i {
+  font-size: 1.8rem;
+}
+
+.navitem {
+}

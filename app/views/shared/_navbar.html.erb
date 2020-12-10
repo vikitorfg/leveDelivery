@@ -1,0 +1,38 @@
+<nav class="navbar navbar-light">
+  <div class="container">
+    <div class="image-logo">
+      <%= link_to root_path do %>
+        <%= image_tag 'https://levedelivery.com.br/wp-content/uploads/2018/12/logp.png'%>
+      <% end%>
+    </div>
+    <div class="navitem-holder">
+      <div class="navitem">
+        <%= link_to root_path do %>
+          <%= fa_icon 'user-circle'%>
+          <div>MINHA CONTA</div>
+        <% end%>
+      </div>
+      <div class="navitem">
+        <%= link_to root_path do %>
+          <%= fa_icon 'question-circle'%>
+          <div>DUVIDAS</div>
+        <% end%>
+      </div>
+      <div class="navitem">
+        <%= link_to root_path do %>
+          <%= fa_icon 'whatsapp'%>
+          <div>WHATSAPP</div>
+        <% end%>
+      </div>
+      <div class="navitem">
+        <%= link_to root_path do %>
+          <%= fa_icon 'shopping-cart'%>
+          <div>CARRINHO</div>
+        <% end%>
+      </div>
+    </div>
+    <%# <a class="navbar-brand" href="#">
+      <img src="/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" width="30" height="24">
+    </a> %>
+  </div>
+</nav>
