@@ -1,0 +1,41 @@
+.about-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 0 auto;
+  max-width: 900px;
+}
+
+.about-container a {
+  width: auto;
+}
+
+.about-container p {
+  text-align: center;
+}
+
+.delivery-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 0 auto;
+  max-width: 900px;
+}
+
+h5 .delivery-btn-clp {
+  display: flex;
+}
+
+.delivery-region-title {
+  margin-left: 1vw;
+}
+
+.delivery-map {
+  margin: 1vw 0 3vw 0;
+}
+
+.accordion-delivery {
+  width: 100%;
+}

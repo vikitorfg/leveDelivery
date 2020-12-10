@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  root to: 'products#index'
+  root to: 'pages#home'
+
+  get 'entrega', to: 'pages#delivery'
+  get 'sobre-nos', to: 'pages#about'
+  get '/', to: 'pages#home'
 
   resources :line_items
   resources :carts
