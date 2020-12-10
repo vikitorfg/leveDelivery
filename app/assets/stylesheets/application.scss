@@ -38,5 +38,22 @@
   font-size: 1.8rem;
 }
 
-.navitem {
+.navmenu-ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: auto;
+  flex-grow: 100;
+}
+
+.custom-nav-item-01 {
+  background-color: #ff9715;
+  border-top-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border-top-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+  padding: 0 3vw 0 3vw;
+}
+.custom-nav-item-01 a {
+  color: white !important;
 }
