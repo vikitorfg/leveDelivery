@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'sobre-nos', to: 'pages#about'
   get '/', to: 'pages#home'
 
+  resources :contents
   resources :line_items
   resources :carts
   resources :products
