@@ -8,14 +8,28 @@ class Product < ApplicationRecord
   validates :price, :calories, :protein, :carbohidrates, :fibers, :total_fat,
             :sat_fat, :sodium, numericality: { greater_than_or_equal_to: 0 }
 
-#   validates :image_url, allow_blank: true, format: {
-#     with: /\.(gif|jpg|png)\z/i,
-#     message: 'must be a URL for GIF, JPG or PNG image.'
-#   }
+  #   validates :image_url, allow_blank: true, format: {
+  #     with: /\.(gif|jpg|png)\z/i,
+  #     message: 'must be a URL for GIF, JPG or PNG image.'
+  #   }
 
   has_many :line_items
+  has_many :tagging_content
+  has_many :content, through: :tagging_content
 
   before_destroy :ensure_not_referenced_by_any_line_item
+
+  def content_list
+    content.collect do |content|
+      content.name
+    end.join(', ')
+  end
+
+  def content_list=(content_string)
+    tag_list = content_string.split(',').collect { |s| s.strip.downcase }.uniq
+    new_or_found_tags = tag_list.collect { |name| Content.find_or_create_by(name: name) }
+    self.content = new_or_found_tags
+  end
 
   private
 

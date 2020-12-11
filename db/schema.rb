@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_27_164634) do
+ActiveRecord::Schema.define(version: 2020_12_11_140251) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,13 +24,6 @@ ActiveRecord::Schema.define(version: 2020_11_27_164634) do
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "calories"
-    t.integer "protein"
-    t.integer "carbohidrates"
-    t.integer "fibers"
-    t.integer "total_fat"
-    t.integer "sat_fat"
-    t.integer "sodium"
   end
 
   create_table "line_items", force: :cascade do |t|
@@ -59,6 +52,17 @@ ActiveRecord::Schema.define(version: 2020_11_27_164634) do
     t.integer "sodium"
   end
 
+  create_table "tagging_contents", force: :cascade do |t|
+    t.bigint "content_id", null: false
+    t.bigint "product_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["content_id"], name: "index_tagging_contents_on_content_id"
+    t.index ["product_id"], name: "index_tagging_contents_on_product_id"
+  end
+
   add_foreign_key "line_items", "carts"
   add_foreign_key "line_items", "products"
+  add_foreign_key "tagging_contents", "contents"
+  add_foreign_key "tagging_contents", "products"
 end

@@ -1,19 +1,17 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: [:show, :edit, :update, :destroy]
+  before_action :set_product, only: %i[show edit update destroy]
 
   def index
     @products = Product.all
   end
 
-  def show
-  end
+  def show; end
 
   def new
     @product = Product.new
   end
 
-  def edit
-  end
+  def edit; end
 
   def create
     @product = Product.new(product_params)
@@ -50,13 +48,16 @@ class ProductsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_product
-      @product = Product.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def product_params
-      params.require(:product).permit(:title, :description, :image_url, :price)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_product
+    @product = Product.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def product_params
+    params.require(:product).permit(:title, :description, :image_url, :price,
+                                    :calories, :protein, :carbohidrates, :fibers,
+                                    :total_fat, :sat_fat, :sodium, :content_list)
+  end
 end

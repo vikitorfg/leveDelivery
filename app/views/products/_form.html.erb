@@ -2,7 +2,6 @@
   <% if product.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
-
       <ul>
         <% product.errors.full_messages.each do |message| %>
           <li><%= message %></li>
@@ -10,27 +9,54 @@
       </ul>
     </div>
   <% end %>
-
   <div class="field">
     <%= form.label :title %>
     <%= form.text_field :title %>
   </div>
-
   <div class="field">
     <%= form.label :description %>
     <%= form.text_area :description, rows: 10, cols: 60 %>
   </div>
-
   <div class="field">
     <%= form.label :image_url %>
     <%= form.text_field :image_url %>
   </div>
-
   <div class="field">
     <%= form.label :price %>
     <%= form.text_field :price %>
   </div>
-
+  <p>
+    <%= form.label :content_list %><br />
+    <%= form.text_field :content_list %>
+  </p>
+  <div class="field">
+    <%= form.label :calories %>
+    <%= form.text_field :calories %>
+  </div>
+  <div class="field">
+    <%= form.label :protein %>
+    <%= form.text_field :protein %>
+  </div>
+  <div class="field">
+    <%= form.label :carbohidrates %>
+    <%= form.text_field :carbohidrates %>
+  </div>
+  <div class="field">
+    <%= form.label :fibers %>
+    <%= form.text_field :fibers %>
+  </div>
+  <div class="field">
+    <%= form.label :total_fat %>
+    <%= form.text_field :total_fat %>
+  </div>
+  <div class="field">
+    <%= form.label :sat_fat %>
+    <%= form.text_field :sat_fat %>
+  </div>
+  <div class="field">
+    <%= form.label :sodium %>
+    <%= form.text_field :sodium %>
+  </div>
   <div class="actions">
     <%= form.submit %>
   </div>
