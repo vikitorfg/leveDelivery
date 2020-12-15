@@ -27,8 +27,9 @@ class Product < ApplicationRecord
 
   def content_list=(content_string)
     tag_list = content_string.split(',').collect { |s| s.strip.downcase }.uniq
-    new_or_found_tags = tag_list.collect { |name| Content.find_or_create_by(name: name) }
-    self.content = new_or_found_tags
+    found_tags = tag_list.collect { |name| Content.find_by(name: name) }
+    found_tags.reject! { |t| t.nil? }
+    self.content = found_tags
   end
 
   private

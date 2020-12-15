@@ -25,10 +25,9 @@
     <%= form.label :price %>
     <%= form.text_field :price %>
   </div>
-  <p>
-    <%= form.label :content_list %><br />
-    <%= form.text_field :content_list %>
-  </p>
+  <div>
+    <%= form.collection_check_boxes :content_list, Content.order(:name), :id, :name %>
+  </div>
   <div class="field">
     <%= form.label :calories %>
     <%= form.text_field :calories %>
