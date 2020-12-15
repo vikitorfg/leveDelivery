@@ -26,7 +26,7 @@
     <%= form.text_field :price %>
   </div>
   <div>
-    <%= form.collection_check_boxes :content_list, Content.order(:name), :id, :name %>
+    <%= form.collection_check_boxes :content_list, Content.all, :id, :name, { checked: @product.content.map(&:id), include_hidden: false } %>
   </div>
   <div class="field">
     <%= form.label :calories %>

@@ -18,7 +18,6 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
-
     respond_to do |format|
       if @product.save
         format.html { redirect_to @product, notice: 'Product was successfully created.' }
@@ -61,6 +60,6 @@ class ProductsController < ApplicationController
   def product_params
     params.require(:product).permit(:title, :description, :image_url, :price,
                                     :calories, :protein, :carbohidrates, :fibers,
-                                    :total_fat, :sat_fat, :sodium, :content_list)
+                                    :total_fat, :sat_fat, :sodium, content_list: [])
   end
 end
