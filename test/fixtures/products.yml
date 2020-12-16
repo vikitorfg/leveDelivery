@@ -3,11 +3,38 @@
 one:
   title: MyString
   description: MyText
-  image_url: MyString
+  image_url: https://levedelivery.com.br/wp-content/uploads/2020/05/creme-shitake-300x300.jpg
   price: 9.99
+  calories: 1
+  protein: 1
+  carbohidrates: 1
+  fibers: 1
+  total_fat: 1
+  sat_fat: 1
+  sodium: 1
 
 two:
-  title: MyString
+  title: should_be_different
   description: MyText
-  image_url: MyString
+  image_url: https://levedelivery.com.br/wp-content/uploads/2020/05/creme-shitake-300x300.jpg
   price: 9.99
+  calories: 1
+  protein: 1
+  carbohidrates: 1
+  fibers: 1
+  total_fat: 1
+  sat_fat: 1
+  sodium: 1
+
+three:
+  title: soup
+  description: MyText
+  image_url: https://levedelivery.com.br/wp-content/uploads/2020/05/creme-shitake-300x300.jpg
+  price: 9.99
+  calories: 1
+  protein: 1
+  carbohidrates: 1
+  fibers: 1
+  total_fat: 1
+  sat_fat: 1
+  sodium: 1

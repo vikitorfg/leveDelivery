@@ -1,41 +1,41 @@
-require "application_system_test_case"
+require 'application_system_test_case'
 
 class ContentsTest < ApplicationSystemTestCase
   setup do
     @content = contents(:one)
   end
 
-  test "visiting the index" do
+  test 'visiting the index' do
     visit contents_url
-    assert_selector "h1", text: "Contents"
+    assert_selector 'h1', text: 'Contents'
   end
 
-  test "creating a Content" do
+  test 'creating a Content' do
     visit contents_url
-    click_on "New Content"
+    click_on 'New Content'
+    fill_in 'Name', with: 'new_content'
+    click_on 'Create Content'
 
-    click_on "Create Content"
-
-    assert_text "Content was successfully created"
-    click_on "Back"
+    assert_text 'Content was successfully created'
+    click_on 'Back'
   end
 
-  test "updating a Content" do
+  test 'updating a Content' do
     visit contents_url
-    click_on "Edit", match: :first
+    click_on 'Edit', match: :first
 
-    click_on "Update Content"
+    click_on 'Update Content'
 
-    assert_text "Content was successfully updated"
-    click_on "Back"
+    assert_text 'Content was successfully updated'
+    click_on 'Back'
   end
 
-  test "destroying a Content" do
+  test 'destroying a Content' do
     visit contents_url
     page.accept_confirm do
-      click_on "Destroy", match: :first
+      click_on 'Destroy', match: :first
     end
 
-    assert_text "Content was successfully destroyed"
+    assert_text 'Content was successfully destroyed'
   end
 end

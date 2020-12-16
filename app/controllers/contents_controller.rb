@@ -1,5 +1,5 @@
 class ContentsController < ApplicationController
-  before_action :set_content, only: [:show, :edit, :update, :destroy]
+  before_action :set_content, only: %i[show edit update destroy]
 
   # GET /contents
   # GET /contents.json
@@ -9,8 +9,7 @@ class ContentsController < ApplicationController
 
   # GET /contents/1
   # GET /contents/1.json
-  def show
-  end
+  def show; end
 
   # GET /contents/new
   def new
@@ -18,8 +17,7 @@ class ContentsController < ApplicationController
   end
 
   # GET /contents/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /contents
   # POST /contents.json
@@ -62,13 +60,14 @@ class ContentsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_content
-      @content = Content.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def content_params
-      params.fetch(:content, {})
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_content
+    @content = Content.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def content_params
+    params.fetch(:content, {}).permit(:name)
+  end
 end

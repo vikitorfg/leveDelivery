@@ -14,7 +14,7 @@ class Product < ApplicationRecord
   #   }
 
   has_many :line_items
-  has_many :tagging_content
+  has_many :tagging_content, dependent: :destroy
   has_many :content, through: :tagging_content
 
   before_destroy :ensure_not_referenced_by_any_line_item
