@@ -30,6 +30,11 @@ class Product < ApplicationRecord
     self.content = found_tags
   end
 
+  def self.filter_by(name)
+    Content.find_by_name!(name).products
+  end
+
+
   private
 
   # ensure that there are no line items referencing this product

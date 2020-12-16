@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   get 'sobre-nos', to: 'pages#about'
   get '/', to: 'pages#home'
 
+  # get 'products/filter/:content', to: 'products#index', as: :content
+
   resources :contents
   resources :line_items
   resources :carts

@@ -25,8 +25,10 @@ class ProductsTest < ApplicationSystemTestCase
     fill_in 'Total fat', with: 1
     fill_in 'Sat fat', with: 1
     fill_in 'Sodium', with: 1
+    check 'product_content_list_980190962'
     click_on 'Create Product'
 
+    assert_text 'MyString'
     assert_text 'Product was successfully created'
     click_on 'Back'
   end
@@ -39,8 +41,13 @@ class ProductsTest < ApplicationSystemTestCase
     fill_in 'Image url', with: @product.image_url
     fill_in 'Price', with: @product.price
     fill_in 'Title', with: @product.title
+
+    assert page.has_checked_field?('product_content_list_980190962')
+
+    check 'product_content_list_298486374'
     click_on 'Update Product'
 
+    assert_text 'MyString2'
     assert_text 'Product was successfully updated'
     click_on 'Back'
   end

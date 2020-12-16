@@ -2,7 +2,11 @@ class ProductsController < ApplicationController
   before_action :set_product, only: %i[show edit update destroy]
 
   def index
-    @products = Product.all
+    @products = if params[:content]
+                  Product.filter_by(params[:content])
+                else
+                  Product.all
+                end
   end
 
   def show; end
