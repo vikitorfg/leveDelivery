@@ -15,15 +15,40 @@
  */
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome";
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@200;400;600&display=swap");
+
+header {
+  font-family: "Kanit", sans-serif;
+  font-weight: 600;
+  color: black;
+}
 
 // navbar
+.nav-container {
+  display: flex;
+  flex-direction: column;
+  min-width: 330px;
+}
+
+.image-leve {
+  text-align: center;
+}
+
+.image-leve img {
+  min-width: 160px;
+  margin: 10px 10px 10px 10px;
+}
+
+.navitem-txt {
+  font-size: 10px;
+}
+
 .navitem-holder {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   width: auto;
   flex-grow: 100;
-  margin-left: 20%;
 }
 
 .navitem-holder a {
@@ -32,11 +57,21 @@
   justify-content: center;
   align-items: center;
   color: #424242;
+  font-size: 1.25vw;
 }
 
 .navitem-holder a i {
-  font-size: 1.8rem;
+  font-size: 35px;
 }
+
+.menu-btn_burguer {
+  background-image: url("hamburguer-menu.svg");
+  background-size: 40px 40px;
+  background-repeat: no-repeat;
+  background-position: center top;
+}
+
+// navmenu
 
 .navmenu-ul {
   display: flex;
@@ -60,4 +95,20 @@
 
 .nounderline a {
   text-decoration: none !important;
+}
+
+.dropdown-item {
+  font-family: "Kanit", sans-serif;
+  font-weight: 600;
+}
+
+.nav-menu {
+  font-family: "Kanit", sans-serif;
+  font-weight: 600;
+  color: black;
+}
+
+.nav-menu:hover {
+  text-decoration: none;
+  color: black;
 }
