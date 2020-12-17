@@ -31,9 +31,9 @@ class Product < ApplicationRecord
   end
 
   def self.filter_by(name)
-    Content.find_by_name!(name).products
+    Content.find_by_name!(name).product
+    # need to catch error here? Tag does not exist throws error
   end
-
 
   private
 

@@ -2,8 +2,9 @@ class ProductsController < ApplicationController
   before_action :set_product, only: %i[show edit update destroy]
 
   def index
-    @products = if params[:content]
-                  Product.filter_by(params[:content])
+    
+    @products = if params[:tag]
+                  Product.filter_by(params[:tag])
                 else
                   Product.all
                 end
