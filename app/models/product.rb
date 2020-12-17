@@ -30,8 +30,8 @@ class Product < ApplicationRecord
     self.content = found_tags
   end
 
-  def self.filter_by(name)
-    Content.find_by_name!(name).product
+  def self.filter_by(id)
+    Content.find(id).product
     # need to catch error here? Tag does not exist throws error
   end
 

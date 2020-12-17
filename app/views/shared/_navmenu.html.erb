@@ -15,14 +15,7 @@
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <%= link_to 'Todos', products_path, class: "dropdown-item"%>
             <div class="dropdown-divider"></div>
-            <%= link_to 'Aves', tag_path("Aves"), class: "dropdown-item"%>
-            <a class="dropdown-item" href="#">Low carb</a>
-            <a class="dropdown-item" href="#">Veganos</a>
-            <a class="dropdown-item" href="#">Aves</a>
-            <a class="dropdown-item" href="#">Bovino</a>
-            <a class="dropdown-item" href="#">Creme</a>
-            <a class="dropdown-item" href="#">Pescado</a>
-            <a class="dropdown-item" href="#">Suino</a>
+            <%= tag_menu_helper %>
           </div>
         </li>
         <li class="nav-item">
