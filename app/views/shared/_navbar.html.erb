@@ -1,3 +1,4 @@
+<%= javascript_pack_tag 'menu_toogle' %>
 <nav class="">
   <div class="container nav-container">
     <div class="image-leve">
@@ -39,22 +40,29 @@
   </div>
 </nav>
 <nav class="navbar-expand-lg navbar-light bg-light">
-  <div class="container">
+  <div class="container nav-container">
     <div class="collapse navbar-collapse navmenu" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto navmenu-ul">
-        <li class="nav-item custom-nav-item-01">
+      <ul class="navbar-nav mr-auto navmenu-ul no-padding">
+        <li class="custom-nav-item-01">
           <a class="nav-menu" href="#"><strong>MONTAR MEU KIT</strong></a>
         </li>
-        <li class="nav-item dropdown">
+        <li class="nav-item dropdown sml-none">
           <a class="nav-menu dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             PRATOS
           </a>
           <div class="dropdown-menu" aria-labelledby="">
             <%= link_to 'Todos', products_path, class: "dropdown-item"%>
             <div class="dropdown-divider"></div>
-            <%= tag_menu_helper %>
+            <%= tag_menu_helper(false, "dropdown-item") %>
           </div>
         </li>
+        <li class="nav-item" id="customDropdown">
+          <a class="nav-menu dropdown-toggle" href="#">PRATOS</a>
+        </li>
+        <li class="nav-item-dropdown customDropdownMenu">
+          <%= link_to 'Todos', products_path, class: "nav-menu"%>
+        </li>
+        <%= tag_menu_helper(true, "nav-menu") %>
         <li class="nav-item">
           <a class="nav-menu" href="#">ENTREGA</a>
         </li>

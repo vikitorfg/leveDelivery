@@ -91,6 +91,8 @@ header {
   border-top-right-radius: 8px;
   border-bottom-left-radius: 8px;
   padding: 0 3vw 0 3vw;
+  text-align: center;
+  padding: 7px;
 }
 .custom-nav-item-01 a {
   color: white !important;
@@ -98,6 +100,11 @@ header {
 
 .nounderline a {
   text-decoration: none !important;
+}
+
+.no-padding {
+  padding-right: 0;
+  padding-left: 0;
 }
 
 .dropdown-item {
@@ -120,4 +127,66 @@ header {
 .nav-item {
   text-align: center;
   padding: 7px;
+}
+
+// dropdown menu
+.customDropdownMenu {
+  display: none;
+}
+
+.show-sml {
+  display: block;
+}
+
+.nav-item-dropdown {
+  text-align: center;
+  padding: 7px;
+  background-color: white;
+}
+
+.sml-none {
+  display: none;
+}
+
+@media (min-width: 770px) {
+  // navbar
+
+  .nav-container {
+    flex-direction: row;
+  }
+
+  .navitem-holder {
+    align-items: flex-end;
+    margin-left: 10vw;
+    padding-bottom: 10px;
+  }
+
+  // navmenu
+
+  .navbar-collapse {
+    display: flex !important;
+    flex-basis: 100%;
+    align-items: center;
+  }
+
+  .navbar-nav {
+    flex-direction: row;
+  }
+
+  .nav-item {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .sml-none {
+    display: block;
+  }
+
+  #customDropdown {
+    display: none;
+  }
+
+  .menu-btn_burguer {
+    display: none;
+  }
 }
