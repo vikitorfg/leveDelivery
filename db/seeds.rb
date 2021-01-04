@@ -23,11 +23,12 @@ Product.create!(title: 'Creme de cebola',
                 fibers: rand(8),
                 total_fat: rand(30),
                 sat_fat: rand(10),
-                sodium: rand(30))
+                sodium: rand(30),
+                content_list: [Content.first.id])
 
 Product.create!(title: 'Marreco com arroz',
                 description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-                image_url: "https://baconmockup.com/#{rand(280..299)}/#{rand(180..199)}/",
+                image_url: "https://levedelivery.com.br/wp-content/uploads/2020/06/Creme-Cebola-300x300.jpg",
                 price: rand(20) + 4.99,
                 calories: rand(150..649),
                 protein: rand(30),
@@ -35,11 +36,12 @@ Product.create!(title: 'Marreco com arroz',
                 fibers: rand(8),
                 total_fat: rand(30),
                 sat_fat: rand(10),
-                sodium: rand(30))
+                sodium: rand(30),
+                content_list: [Content.first.id])
 
 Product.create!(title: 'Carne de panela',
                 description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-                image_url: "https://baconmockup.com/#{rand(280..299)}/#{rand(180..199)}/",
+                image_url: "https://levedelivery.com.br/wp-content/uploads/2020/05/Creme-de-ervilha-com-frango-e-bacon-300x300.jpg",
                 price: rand(20) + 4.99,
                 calories: rand(150..649),
                 protein: rand(30),
@@ -47,11 +49,12 @@ Product.create!(title: 'Carne de panela',
                 fibers: rand(8),
                 total_fat: rand(30),
                 sat_fat: rand(10),
-                sodium: rand(30))
+                sodium: rand(30),
+                content_list: [Content.first.id])
 
 Product.create!(title: 'Salmao com legumes',
                 description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-                image_url: "https://baconmockup.com/#{rand(280..299)}/#{rand(180..199)}/",
+                image_url: "https://levedelivery.com.br/wp-content/uploads/2020/09/peixe-moyashi-300x300.jpg",
                 price: rand(20) + 4.99,
                 calories: rand(150..649),
                 protein: rand(30),
@@ -59,4 +62,5 @@ Product.create!(title: 'Salmao com legumes',
                 fibers: rand(8),
                 total_fat: rand(30),
                 sat_fat: rand(10),
-                sodium: rand(30))
+                sodium: rand(30),
+                content_list: [Content.first.id])

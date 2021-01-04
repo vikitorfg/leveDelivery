@@ -5,10 +5,51 @@
   .card-container {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
   }
 
   .card-product {
-    margin-left: 15px;
-    margin-top: 15px;
+    margin: 15px;
+    min-width: 220px;
+    max-width: 330px;
+  }
+
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card-price {
+    display: flex;
+  }
+
+  .card-price div {
+    margin-right: 15px;
+  }
+
+  .card-tags {
+    color: #999999;
+  }
+
+  .card-tags a {
+    color: #999999;
+  }
+
+  @media (min-width: 500px) {
+    .card-product {
+      margin: 15px;
+      width: 40vw;
+      min-width: 150px;
+    }
+  }
+
+  @media (min-width: 770px) {
+    .card-product {
+      margin: 15px;
+      width: 20vw;
+      min-width: 150px;
+      max-width: 330px;
+    }
   }
 }
