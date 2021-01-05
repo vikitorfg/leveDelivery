@@ -14,4 +14,5 @@ module ProductsHelper
 
         content_list.html_safe
     end
+
 end

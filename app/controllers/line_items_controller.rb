@@ -29,8 +29,8 @@ class LineItemsController < ApplicationController
 
     respond_to do |format|
       if @line_item.save
-        format.html {  }
-        # format.js   { @current_item = @line_item }
+        format.html { redirect_to products_index_url }
+        format.js   { @current_product = product }
         format.json { render :show, status: :created, location: @line_item }
       else
         format.html { render :new }
@@ -56,13 +56,13 @@ class LineItemsController < ApplicationController
   def destroy
     product = Product.find(params[:id])
     @line_item = @cart.line_items.find_by(product_id: product.id)
-    
+
     unless @line_item.nil?
       @line_item = @cart.remove_product(product)
     end
-    # product = Product.find(@line_item.product_id)
     respond_to do |format|
       format.html { }
+      format.js   { @current_product = product }
     end
   end
 

@@ -1,11 +1,11 @@
 <% cache product do%>
-  <div class="card-product">
+  <div class="card-product" id="<%=product.id%>">
     <% if product.image_url %>
       <%= image_tag(product.image_url, class: "card-img-top")%>
     <% else %>
       <img class="card-img-top" src=<%= bacon_mockup %> alt="Card image cap">
     <% end %>
-    <div class="card-body">
+    <div class="card-body" >
       <p class="card-tags">
         <%= content_helper(product.content)%>
       </p>
@@ -14,8 +14,8 @@
         <div>
           $<%= product.price %>
         </div>
-        <%= button_to '-', line_item_path(product), method: :delete %>
-        <%= button_to '+', line_items_path(product_id: product) %>
+        <%= button_to '-', line_item_path(product), method: :delete, remote: true %>
+        <%= button_to '+', line_items_path(product_id: product), remote: true %>
       </div>
     </div>
   </div>
