@@ -59,11 +59,13 @@ class LineItemsController < ApplicationController
 
     unless @line_item.nil?
       @line_item = @cart.remove_product(product)
+
+      respond_to do |format|
+        format.html { }
+        format.js   { @current_product = product }
+      end
     end
-    respond_to do |format|
-      format.html { }
-      format.js   { @current_product = product }
-    end
+    
   end
 
   private

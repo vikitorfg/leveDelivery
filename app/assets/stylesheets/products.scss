@@ -55,7 +55,7 @@
 
   @keyframes product-highlight {
     0% {
-      background: #8f8;
+      background: #99e699;
     }
     100% {
       background: none;
@@ -64,5 +64,18 @@
 
   .product-highlight {
     animation: product-highlight 1s;
+  }
+
+  @keyframes product-highlight-red {
+    0% {
+      background: #ff6666;
+    }
+    100% {
+      background: none;
+    }
+  }
+
+  .product-highlight-red {
+    animation: product-highlight-red 1s;
   }
 }
