@@ -1,5 +1,5 @@
 <% cache product do%>
-  <div class="card-product" id="<%=product.id%>">
+  <div class="card-product">
     <% if product.image_url %>
       <%= image_tag(product.image_url, class: "card-img-top")%>
     <% else %>
@@ -19,7 +19,7 @@
         <div class="div-quantity div-quantity-left">
           <%= button_to '-', line_item_path(product), class: "btn-quantity", method: :delete, remote: true %>
         </div>
-        <div class="div-quantity div-quantity-center">
+        <div class="div-quantity div-quantity-center" id="<%=product.id%>">
           <%= quantity_helper(product, @cart) %>
         </div>
         <div class="div-quantity div-quantity-right">

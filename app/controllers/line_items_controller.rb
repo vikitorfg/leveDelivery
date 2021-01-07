@@ -30,7 +30,7 @@ class LineItemsController < ApplicationController
     respond_to do |format|
       if @line_item.save
         format.html { redirect_to products_index_url }
-        format.js   { @current_product = product }
+        format.js   { @current_product = product}
         format.json { render :show, status: :created, location: @line_item }
       else
         format.html { render :new }

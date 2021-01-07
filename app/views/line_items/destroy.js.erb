@@ -1,5 +1,4 @@
 <% unless @current_product.nil?%>
   product = document.getElementById("<%=@current_product.id%>")
-  product.className = "card-product product-highlight-red"
-  setTimeout(function(){ product.className = "card-product" }, 1000);
+  product.innerHTML = "<%= quantity_helper(@current_product, @cart) %>"
 <%end%>
