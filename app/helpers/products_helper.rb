@@ -15,4 +15,13 @@ module ProductsHelper
         content_list.html_safe
     end
 
+    def quantity_helper(product, cart)
+        quantity = 0
+        unless cart.line_items.find_by(product_id: product.id).nil?
+            quantity = cart.line_items.find_by(product_id: product.id).quantity
+        end
+
+        quantity
+    end
+
 end

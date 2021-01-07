@@ -36,6 +36,46 @@
     color: #999999;
   }
 
+  .card-quantity {
+    display: flex;
+  }
+
+  .btn-quantity {
+    background-color: white;
+    color: #777777;
+    border: none;
+    border-color: #777777;
+    outline: none;
+    width: 100%;
+  }
+
+  .div-quantity {
+    border-style: solid;
+    border-color: #777777;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    width: 25px;
+  }
+
+  .div-quantity-center {
+    border-right-width: 1px;
+    border-left-width: 1px;
+    font-size: small;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .div-quantity-left {
+    border-right-width: 0;
+    border-left-width: 1px;
+  }
+
+  .div-quantity-right {
+    border-right-width: 1px;
+    border-left-width: 0;
+  }
+
   @media (min-width: 500px) {
     .card-product {
       margin: 15px;

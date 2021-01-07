@@ -14,8 +14,17 @@
         <div>
           $<%= product.price %>
         </div>
-        <%= button_to '-', line_item_path(product), method: :delete, remote: true %>
-        <%= button_to '+', line_items_path(product_id: product), remote: true %>
+      </div>
+      <div class="card-quantity">
+        <div class="div-quantity div-quantity-left">
+          <%= button_to '-', line_item_path(product), class: "btn-quantity", method: :delete, remote: true %>
+        </div>
+        <div class="div-quantity div-quantity-center">
+          <%= quantity_helper(product, @cart) %>
+        </div>
+        <div class="div-quantity div-quantity-right">
+          <%= button_to '+', line_items_path(product_id: product), class: "btn-quantity", remote: true %>
+        </div>
       </div>
     </div>
   </div>
